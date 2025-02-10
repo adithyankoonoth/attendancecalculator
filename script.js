@@ -8,9 +8,9 @@ const workingDaysOutput = document.getElementById('workingDays');
 const additionalHoursOutput = document.getElementById('additionalHours');
 const dateError = document.getElementById('dateError');
 
-let ktuHolidays = []; // Array to store KTU holidays
+let ktuHolidays = []; 
 
-// Placeholder holiday data (REPLACE with actual data)
+
 ktuHolidays = [
     new Date(2024, 0, 26),
     new Date(2024, 4, 1),
@@ -40,12 +40,12 @@ const calculateRequiredHours = () => {
     const hoursPerWeek = parseFloat(hoursPerWeekInput.value);
     const currentAttendance = parseFloat(currentAttendanceInput.value);
 
-    // Date Validation
+   
     if (startDate > endDate) {
         dateError.textContent = "End date must be after start date.";
         return;
     } else {
-        dateError.textContent = ""; // Clear any previous error
+        dateError.textContent = ""; 
     }
 
     if (!startDate || !endDate || isNaN(hoursPerWeek) || isNaN(currentAttendance) || currentAttendance < 0 || currentAttendance > 100) {
@@ -67,6 +67,6 @@ const calculateRequiredHours = () => {
 
 calculateButton.addEventListener('click', calculateRequiredHours);
 
-// Event listeners for date inputs to clear errors
+
 startDateInput.addEventListener('change', () => dateError.textContent = "");
 endDateInput.addEventListener('change', () => dateError.textContent = "");
